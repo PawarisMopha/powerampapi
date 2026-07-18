@@ -16,7 +16,7 @@ import androidx.core.content.IntentCompat
 import com.maxmpz.poweramp.player.PowerampAPI.*
 import com.poweramp.v3.sampleskin.SkinInfoActivity.Companion.skinVerifiedOnce
 
-private const val TAG = "SkinVerificationActivity"
+private const val TAG = "SkinVerificationAct"
 private const val LOG = true
 
 
