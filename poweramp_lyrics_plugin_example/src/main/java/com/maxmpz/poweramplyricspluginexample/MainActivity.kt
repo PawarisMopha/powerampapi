@@ -37,7 +37,9 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.maxmpz.poweramp.player.PowerampAPI
 import com.maxmpz.poweramp.player.PowerampAPI.NO_ID
-import com.maxmpz.poweramp.player.TableDefs.*
+import com.maxmpz.poweramp.player.TableDefs.Files
+import com.maxmpz.poweramp.player.TableDefs.Artists
+import com.maxmpz.poweramp.player.TableDefs.Albums
 import kotlinx.coroutines.*
 
 /**
