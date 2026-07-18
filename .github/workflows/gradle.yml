@@ -28,11 +28,16 @@ jobs:
       run: chmod +x gradlew
 
     - name: Create local.properties
-      run: |
-        echo "sdk.dir=$ANDROID_HOME" > poweramp_skin_sample/local.properties
-        
+      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: PowerampAPI-Build-Result
+        path: app/build/outputs/apk/**/*.apk
 
   dependency-submission:
     runs-on: ubuntu-latest
@@ -48,11 +53,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
+    - name: Create local.properties
+      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+      
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582
       
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: PowerampAPI-Build-Result
-        path: app/build/outputs/apk/**/*.apk
